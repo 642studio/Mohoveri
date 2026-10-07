@@ -23,7 +23,7 @@ const faqs = [
   },
   {
     question: "¿Hay mínimo de piezas?",
-    answer: "Sí, para dubetina y lona el mínimo es 51 piezas.",
+    answer: "Sí, el mínimo es de 30 piezas; para lona, 51 piezas.",
   },
   {
     question: "¿Puedo pedir colores especiales?",

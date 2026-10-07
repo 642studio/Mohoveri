@@ -24,7 +24,7 @@ export function Experience() {
             Una experiencia que transforma tu evento.
           </h2>
           <p className="text-lg text-olive/80 leading-relaxed">
-            Mohoveri Hatbar es una experiencia interactiva donde cada invitado elige, diseña y se lleva un sombrero
+            El Hat Bar de Mohoveri es una experiencia interactiva donde cada invitado elige, diseña y se lleva un sombrero
             único. No es solo un detalle: es un momento especial que se convierte en recuerdo para toda la vida.
           </p>
         </div>

@@ -15,7 +15,6 @@ type MaterialPrice = {
 }
 
 const pricingData: MaterialPrice[] = [
-  { material: "Dubetina", price30to50: null, price51to99: 290, price100plus: 250 },
   { material: "Lona", price30to50: null, price51to99: 290, price100plus: 250 },
   { material: "Gamuza", price30to50: 390, price51to99: 350, price100plus: 330 },
   { material: "Palma Fina", price30to50: 450, price51to99: 410, price100plus: 380 },

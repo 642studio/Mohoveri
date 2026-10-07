@@ -1,4 +1,5 @@
-import { Clock, Facebook, Instagram, Mail, MapPin, Phone } from "lucide-react"
+import { Clock, Facebook, Instagram, Mail, MapPin, MessageCircle, Phone } from "lucide-react"
+import { site, whatsappUrl } from "@/lib/site"
 import { Navbar } from "@/components/navbar"
 import { ContactForm } from "@/components/contact-form"
 import { Footer } from "@/components/footer"
@@ -53,8 +54,25 @@ export default function ContactoPage() {
                 </div>
                 <div>
                   <h3 className="font-serif text-lg text-foreground mb-1">Teléfono</h3>
-                  <a href="tel:+526441234567" className="text-muted-foreground hover:text-warmBrown transition-colors">
-                    +52 (644) 123-4567
+                  <a href={site.phoneHref} className="text-muted-foreground hover:text-warmBrown transition-colors">
+                    {site.phoneDisplay}
+                  </a>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 rounded-full bg-sand flex items-center justify-center flex-shrink-0">
+                  <MessageCircle className="w-5 h-5 text-warmBrown" />
+                </div>
+                <div>
+                  <h3 className="font-serif text-lg text-foreground mb-1">WhatsApp</h3>
+                  <a
+                    href={whatsappUrl("Hola, me gustaría recibir información de Mohoveri.")}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-muted-foreground hover:text-warmBrown transition-colors"
+                  >
+                    Escríbenos por WhatsApp
                   </a>
                 </div>
               </div>
@@ -92,7 +110,8 @@ export default function ContactoPage() {
               <h3 className="font-serif text-xl text-foreground mb-4">Síguenos</h3>
               <div className="flex gap-4">
                 <a
-                  href="https://instagram.com/mohoveri"
+                  href={site.instagram}
+                  aria-label="Instagram"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-12 h-12 rounded-full bg-sand flex items-center justify-center hover:bg-warmBrown hover:text-cream transition-all"
@@ -100,7 +119,8 @@ export default function ContactoPage() {
                   <Instagram className="w-5 h-5" />
                 </a>
                 <a
-                  href="https://facebook.com/mohoveri"
+                  href={site.facebook}
+                  aria-label="Facebook"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-12 h-12 rounded-full bg-sand flex items-center justify-center hover:bg-warmBrown hover:text-cream transition-all"

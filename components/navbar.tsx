@@ -5,11 +5,12 @@ import Image from "next/image"
 import Link from "next/link"
 import { Heart, Instagram, Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { site } from "@/lib/site"
 
 const navLinks = [
   { label: "HATBAR", href: "/#experiencia" },
   { label: "EVENTOS", href: "/#experiencia" },
-  { label: "PAQUETES", href: "/#MaterialsSection" },
+  { label: "PAQUETES", href: "/#materiales" },
   { label: "GALERÍA", href: "/#galeria" },
   { label: "FAQ", href: "/#faq" },
 ]
@@ -47,7 +48,7 @@ export function Navbar() {
         <div className="backdrop-blur-md bg-[#171717]/80 rounded-full shadow-lg border border-white/[0.08]">
           <div className="flex justify-between items-center h-16 px-6 lg:px-8">
             <Link href="/" className="flex-shrink-0">
-              <Image src="/images/design-mode/Mohoveri%20Blanco.png" alt="Mohoveri Hatbar" width={80} height={80} />
+              <Image src="/images/design-mode/Mohoveri%20Blanco.png" alt={site.name} width={80} height={80} />
             </Link>
 
             <div className="hidden lg:flex items-center gap-8 absolute left-1/2 -translate-x-1/2">
@@ -66,7 +67,7 @@ export function Navbar() {
               <Link href="/#" className="text-cream/80 hover:text-cream transition-colors">
                 <Heart size={18} />
               </Link>
-              <Link href="https://instagram.com" target="_blank" className="text-cream/80 hover:text-cream transition-colors">
+              <Link href={site.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="text-cream/80 hover:text-cream transition-colors">
                 <Instagram size={18} />
               </Link>
               <Link href="/contacto">
@@ -104,7 +105,7 @@ export function Navbar() {
                 <Link href="/#" className="text-cream/80 hover:text-cream transition-colors">
                   <Heart size={18} />
                 </Link>
-                <Link href="https://instagram.com" target="_blank" className="text-cream/80 hover:text-cream transition-colors">
+                <Link href={site.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="text-cream/80 hover:text-cream transition-colors">
                   <Instagram size={18} />
                 </Link>
               </div>

@@ -6,6 +6,15 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
+import { whatsappUrl } from "@/lib/site"
+
+const eventLabels: Record<string, string> = {
+  boda: "Boda",
+  quinceanera: "Quinceañera",
+  corporativo: "Evento corporativo",
+  cumpleanos: "Cumpleaños",
+  otro: "Otro",
+}
 
 export function ContactForm() {
   const [formData, setFormData] = useState({
@@ -20,7 +29,17 @@ export function ContactForm() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    console.log("Form submitted:", formData)
+    const lines = [
+      "Hola, quiero información de Mohoveri.",
+      `Nombre: ${formData.nombre}`,
+      `Correo: ${formData.email}`,
+      `Teléfono: ${formData.telefono}`,
+      `Tipo de evento: ${eventLabels[formData.evento] ?? formData.evento}`,
+      formData.fecha && `Fecha del evento: ${formData.fecha}`,
+      formData.invitados && `Invitados: ${formData.invitados}`,
+      formData.mensaje && `Mensaje: ${formData.mensaje}`,
+    ].filter(Boolean)
+    window.open(whatsappUrl(lines.join("\n")), "_blank", "noopener,noreferrer")
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -131,8 +150,11 @@ export function ContactForm() {
           type="submit"
           className="w-full bg-warmBrown hover:bg-warmBrown/90 text-cream font-serif text-lg py-6"
         >
-          Enviar mensaje
+          Enviar por WhatsApp
         </Button>
+        <p className="text-sm text-muted-foreground text-center">
+          Se abrirá WhatsApp con tu mensaje listo para enviar.
+        </p>
       </form>
     </div>
   )

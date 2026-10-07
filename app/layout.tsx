@@ -2,20 +2,21 @@ import type React from "react"
 import type { Metadata } from "next"
 import { Inter, Lora } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
+import { WhatsAppButton } from "@/components/whatsapp-button"
 import "./globals.css"
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
 const lora = Lora({ subsets: ["latin"], variable: "--font-lora" })
 
 export const metadata: Metadata = {
-  title: "Mohoveri - Hat Bar Premium para Eventos",
+  title: "MOHOVERI Hat Atelier - Hat Bar Premium para Eventos",
   description:
     "El Hat Bar premium inspirado en raíces Yoreme, donde tus invitados crean su propio sombrero personalizándolo en vivo. Perfecto para bodas, XV años y eventos especiales.",
   openGraph: {
-    title: "Mohoveri - Hat Bar Premium para Eventos",
+    title: "MOHOVERI Hat Atelier - Hat Bar Premium para Eventos",
     description:
       "El Hat Bar premium inspirado en raíces Yoreme, donde tus invitados crean su propio sombrero personalizándolo en vivo.",
-    siteName: "Mohoveri Hat Bar",
+    siteName: "MOHOVERI Hat Atelier",
     locale: "es_MX",
     type: "website",
     images: [
@@ -23,13 +24,13 @@ export const metadata: Metadata = {
         url: "https://mohovery.vercel.app/images/mohoveri-20blanco.png",
         width: 1200,
         height: 630,
-        alt: "Mohoveri Hat Bar - Sombreros Premium para Eventos",
+        alt: "MOHOVERI Hat Atelier - Sombreros Premium para Eventos",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Mohoveri - Hat Bar Premium para Eventos",
+    title: "MOHOVERI Hat Atelier - Hat Bar Premium para Eventos",
     description:
       "El Hat Bar premium inspirado en raíces Yoreme, donde tus invitados crean su propio sombrero personalizándolo en vivo.",
     images: ["https://mohovery.vercel.app/images/mohoveri-20blanco.png"],
@@ -53,6 +54,7 @@ export default function RootLayout({
     <html lang="es">
       <body className={`${inter.variable} ${lora.variable} font-sans antialiased`}>
         {children}
+        <WhatsAppButton />
         <Analytics />
       </body>
     </html>

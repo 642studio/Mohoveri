@@ -78,11 +78,6 @@ function MarqueeChunk({ item }: { item: MenuItem }) {
 
 const materials: MenuItem[] = [
   {
-    text: "Dubetina",
-    image: "https://res.cloudinary.com/djmgbkarg/image/upload/v1764962940/CR6_0118_2_s82aj3.jpg",
-    description: "Material ligero y versátil, perfecto para eventos casuales - Disponible desde 51 piezas",
-  },
-  {
     text: "Lona",
     image: "https://res.cloudinary.com/djmgbkarg/image/upload/v1764963014/CR6_0107_1_wucmcu.jpg",
     description: "Resistente y duradero, ideal para exteriores - Disponible desde 51 piezas",
@@ -116,7 +111,7 @@ const materials: MenuItem[] = [
 
 export function MaterialsSection() {
   return (
-    <section className="relative" style={{ height: "600px" }}>
+    <section id="materiales" className="relative scroll-mt-28" style={{ height: "600px" }}>
       <div className="absolute inset-0 bg-gradient-to-b from-black/20 to-transparent pointer-events-none z-10" />
       <FlowingMenu items={materials} />
     </section>

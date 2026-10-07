@@ -1,6 +1,7 @@
 import Link from "next/link"
 import { MessageCircle } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { whatsappUrl } from "@/lib/site"
 
 export function ContactCTA() {
   return (
@@ -16,7 +17,11 @@ export function ContactCTA() {
               Agendar llamada
             </Button>
           </Link>
-          <Link href="/contacto">
+          <a
+            href={whatsappUrl("Hola, me interesa el Hat Bar de Mohoveri para mi evento.")}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <Button
               size="lg"
               variant="outline"
@@ -25,7 +30,7 @@ export function ContactCTA() {
               <MessageCircle className="w-5 h-5 mr-2" />
               WhatsApp directo
             </Button>
-          </Link>
+          </a>
         </div>
       </div>
     </section>
